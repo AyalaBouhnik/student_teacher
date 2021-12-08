@@ -1,21 +1,16 @@
 package com.example.helloworld
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import android.widget.Spinner
-import androidx.core.content.ContentProviderCompat
-import androidx.core.content.ContentProviderCompat.requireContext
-import java.lang.reflect.Field
 
-class activityRegister : AppCompatActivity() {
+class ActivityRegister : AppCompatActivity() {
     private val profession = hashMapOf<TextView, Array<TextView>>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        val tvLogin=findViewById<TextView>(R.id.tvLogin)
         val btnRegister=findViewById<TextView>(R.id.btnRegister)
         val editUsername=findViewById<TextView>(R.id.editUsername)
         val editEmail=findViewById<TextView>(R.id.editEmail)
@@ -26,8 +21,9 @@ class activityRegister : AppCompatActivity() {
         val editGender=findViewById<TextView>(R.id.editGender)
         val spnTest=findViewById<Spinner>(R.id.spnTest)
 
-        val list : MutableList<String> = ArrayList()
 
+
+        val list : MutableList<String> = ArrayList()
 
         list.add("אזור")
         list.add("צפון")
@@ -44,7 +40,7 @@ class activityRegister : AppCompatActivity() {
                 id: Long
             ) {
             val item = list[position]
-                Toast.makeText(this@activityRegister,"$item selected",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ActivityRegister,"$item selected",Toast.LENGTH_SHORT).show()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?){}
@@ -56,10 +52,6 @@ class activityRegister : AppCompatActivity() {
 
 
 
-        tvLogin.setOnClickListener {
-            val intent= Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        }
         btnRegister.setOnClickListener {
            if(editUsername.text.trim().isNotEmpty() || editEmail.text.isNotEmpty() || editCPassword.text.isNotEmpty() ||  editPassword.text.isNotEmpty()){
 //               val teach=Teacher(editUsername.toString(),editAge.toString(),editGender.toString())
@@ -68,6 +60,9 @@ class activityRegister : AppCompatActivity() {
             else{
                Toast.makeText(this, "Input required", Toast.LENGTH_SHORT).show()
            }
+            if(editTeach.text.isNotEmpty()){
+
+            }
             if(editTeach.text.isNotEmpty()){
                 var teachers = arrayOf(editUsername)
                 teachers=append(teachers,editUsername)

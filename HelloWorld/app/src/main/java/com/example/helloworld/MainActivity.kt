@@ -1,35 +1,42 @@
 package com.example.helloworld
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+
+open class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnLogin=findViewById<Button>(R.id.btnLogin)//גישה לכפתור "היכנס"
-        val edUsername=findViewById<EditText>(R.id.edUsername)
-        val edPassword=findViewById<EditText>(R.id.edPassword)
-        val tvRegister=findViewById<TextView>(R.id.tvRegister)
+        val btn_sign_in_intro = findViewById<Button>(R.id.btn_sign_in_intro)
+        val btn_sign_up_intro = findViewById<Button>(R.id.btn_sign_up_intro)
 
-        btnLogin.setOnClickListener {//כל מה שנכתוב כאן יקרה ברגע שנלחץ על בכפתור
-            if(edUsername.text.trim().isNotEmpty() || edPassword.text.trim().isNotEmpty()){
-                Toast.makeText(this, "input provided", Toast.LENGTH_SHORT).show()
-            }
-            else{
-                Toast.makeText(this, "input required", Toast.LENGTH_SHORT).show()
-            }
 
-        }
-
-        tvRegister.setOnClickListener {
-            val intent=Intent(this,activityRegister::class.java)
+        btn_sign_in_intro.setOnClickListener {
+            val intent= Intent(this,LogInActivity::class.java)
             startActivity(intent)
         }
+
+
+        btn_sign_up_intro.setOnClickListener {
+            val intent = Intent(this, ActivityRegister::class.java)
+            startActivity(intent)
+        }
+//        window.setFlags(
+//            windowManager.LayoutParmas.FLAG_FULLSCREEN,
+//            windowManager.LayoutParmas.FLAG_FULLSCREEN
+//        )
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+
     }
+
+
+
+
 }

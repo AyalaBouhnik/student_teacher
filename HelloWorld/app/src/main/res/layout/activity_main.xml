@@ -1,88 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<LinearLayout tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/intro_background"
     android:layout_height="match_parent"
-    android:background="@color/bgColor"
-    tools:context=".MainActivity">
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <!--END-->
+
+    <TextView android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="התחברות"
-        android:textColor="#000"
-        android:textColorHighlight="#FFFFFF"
-        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/intro_screen_title_text_size"
+        android:textColor="@color/colorAccent"
+        android:text="@string/app_name"
+        android:layout_marginTop="@dimen/intro_screen_title_text_marginTop"
+        android:id="@+id/tv_app_name_intro"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvUsername"
-        android:layout_width="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edUsername"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/boxColor"
-            android:hint="שם משתמש"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvPassword"
-        android:layout_width="match_parent"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/edPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="סיסמא"
-            android:background="@color/boxColor"
-            android:inputType="textPassword"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:text="כניסה"
-        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
-        android:layout_margin="50dp"
-        android:textColor="#fff"
-        android:background="#ffadad"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/tvRegister"
+    <ImageView android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:background="@color/btnColor"
-        android:padding="10dp"
-        android:text="אני עדיין לא רשום"
-        android:textColor="#fff"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="@dimen/intro_screen_image_marginTop"
+        android:src="@drawable/ic_task_image"
+        android:contentDescription="@string/image_contentDescription"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/lets_get_started_text_size"
+        android:textColor="@color/primary_text_color"
+        android:text="@string/let_s_get_started_text"
+        android:layout_marginTop="@dimen/lets_get_started_text_marginTop"/>
+
+    <TextView android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/intro_text_size"
+        android:textColor="@color/secondary_text_color"
+        android:text="@string/intro_text_description"
+        android:layout_marginTop="@dimen/intro_text_marginTop"
+        android:lineSpacingExtra="@dimen/intro_text_line_spacing_extra"
+        android:layout_marginEnd="@dimen/intro_text_marginStartEnd"
+        android:layout_marginStart="@dimen/intro_text_marginStartEnd"/>
+
+    <!--TODO (Step 8: Button background files are added in the drawable folder.)-->
+
+
+    <Button android:gravity="center"
+        android:background="@drawable/shape_button_rounded"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/btn_text_size"
+        android:textColor="@android:color/white"
+        android:text="@string/sign_in"
+        android:layout_marginTop="@dimen/intro_screen_sign_in_btn_marginTop"
+        android:id="@+id/btn_sign_in_intro"
+        android:layout_marginEnd="@dimen/btn_marginStartEnd"
+        android:layout_marginStart="@dimen/btn_marginStartEnd"
+        android:paddingBottom="@dimen/btn_paddingTopBottom"
+        android:paddingTop="@dimen/btn_paddingTopBottom"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:gravity="center"
+        android:background="@drawable/white_border_shape_button_rounded"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textSize="@dimen/btn_text_size"
+        android:textColor="#FFF"
+        android:text="@string/sign_up"
+        android:layout_marginTop="@dimen/intro_screen_sign_up_btn_marginTop"
+        android:id="@+id/btn_sign_up_intro"
+        android:layout_marginEnd="@dimen/btn_marginStartEnd"
+        android:layout_marginStart="@dimen/btn_marginStartEnd"
+        android:paddingBottom="@dimen/btn_paddingTopBottom"
+        android:paddingTop="@dimen/btn_paddingTopBottom"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

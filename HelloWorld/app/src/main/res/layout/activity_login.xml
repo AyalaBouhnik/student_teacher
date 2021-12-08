@@ -4,27 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgColor"
-    tools:context=".activityHomeP">
+    android:background="@color/colorAccent"
+    tools:context=".LogInActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:text="שלום גיל"
-        android:textColor="#000"
-        android:textSize="26sp"
+        android:text="התחברות"
+        android:textColor="#FFF"
+        android:textColorHighlight="#FFF"
+        android:textSize="45sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvWhatLearn"
+        app:layout_constraintBottom_toTopOf="@+id/tvUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvWhatLearn"
+        android:id="@+id/tvUsername"
         android:layout_width="match_parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_marginTop="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,42 +35,45 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/edWhatLearn"
+            android:id="@+id/edUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/boxColor"
-            android:hint="מה בא לך ללמוד?"
+            android:background="#FFF"
+            android:hint="שם משתמש"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tvCity"
+        android:id="@+id/tvPassword"
         android:layout_width="match_parent"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWhatLearn"
+        app:layout_constraintTop_toBottomOf="@+id/tvUsername"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/edCity"
+            android:id="@+id/edPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="עיר/אזור"
-            android:background="@color/boxColor"
+            android:hint="סיסמא"
+            android:background="#FFF"
             android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
-        android:text="חפש"
-        app:layout_constraintTop_toBottomOf="@+id/tvCity"
+        android:text="כניסה"
+        android:layout_marginTop="600dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword"
         android:layout_margin="50dp"
         android:textColor="#fff"
-        android:background="@color/boxColor"
+        android:background="#FFF"
         android:layout_height="wrap_content"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
